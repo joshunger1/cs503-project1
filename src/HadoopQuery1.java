@@ -32,7 +32,7 @@ public class HadoopQuery1 {
         }
     }
 
-    public static class ReduceJoinReducer extends Reducer<Text, Text, Text, Text> {
+    public static class JoinReducer extends Reducer<Text, Text, Text, Text> {
         public void reduce(Text key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
             String custIDStr = key.toString();
@@ -63,9 +63,9 @@ public class HadoopQuery1 {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        Job job = new Job(conf, "Reduce-side join");
+        Job job = new Job(conf, "join");
         job.setJarByClass(HadoopQuery1.class);
-        job.setReducerClass(ReduceJoinReducer.class);
+        job.setReducerClass(JoinReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
