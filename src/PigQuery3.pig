@@ -21,5 +21,5 @@ F = FOREACH E GENERATE group, MIN(D.TransTotal), MAX(D.TransTotal), AVG(D.TransT
 --dump the data out
 DUMP F;
 --can also save to hdfs, but was more diffuclt to quickly check output
---STORE E INTO 'hdfs://localhost:9000/user/ds503/PigQuery3' USING PigStorage(',');
+--STORE F INTO 'hdfs://localhost:9000/user/ds503/PigQuery3' USING PigStorage(',');
 

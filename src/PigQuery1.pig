@@ -21,4 +21,4 @@ DUMP I;
 
 --can also store the data, but it was easier to test the query
 --by just dumping it instead of doing hdfs gets each run
---STORE E INTO 'hdfs://localhost:9000/user/ds503/PigQuery1' USING PigStorage(',');
+--STORE I INTO 'hdfs://localhost:9000/user/ds503/PigQuery1' USING PigStorage(',');
